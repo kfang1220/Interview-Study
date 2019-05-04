@@ -18,8 +18,10 @@ loop through hash and check if target - index exists if so return value for both
  */
 var twoSum = function(nums, target) {
     let hash = {}
-    let output = []
     for(let i = 0; i < nums.length; i++) {
+        if(hash[nums[i]]) {
+            return [i-1, i]
+        }
         hash[nums[i]] = i
     }
     
@@ -29,3 +31,5 @@ var twoSum = function(nums, target) {
         }
     }
 };
+
+console.log(twoSum([3,3], 6))
