@@ -1,6 +1,7 @@
 /*
 Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it.
 That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
+//testing git
 
 Input: nums = [8,1,2,2,3]
 Output: [4,0,1,1,3]
@@ -31,14 +32,13 @@ const smallerNumbersThanCurrent = (numsArray) => {
 
 /*
 Improved
+*/
 
 const smallerNumbersThanCurrent = (nums) => {
     let hash = {}
     //cppy original orray to maintain correct output
     nums.slice().sort((a, b) => a - b).forEach((n, i) => {
-        if(!hash[n]) hash[n] = i;
+        if(hash[n] === undefined) hash[n] = i;
     });
     return nums.map(num => num = hash[num]);
 };
-
-*/
